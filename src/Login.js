@@ -14,7 +14,11 @@ function Login() {
         .then(res=>{
             console.log(res)
             if(res.data === "success"){
+             
                 navigate('/home')
+                alert("login successful")
+            }else{
+              alert("please check your username and password")
             }
             
         })
@@ -27,11 +31,11 @@ function Login() {
     <form onSubmit={handleSubmit}>
        email <input type='email' placeholder='enter email' name='email'onChange={(e)=>setEmail(e.target.value)}/><br/>
        password <input type='password' placeholder='enter password' name='password' onChange={(e)=>setPassword(e.target.value)}/><br/>
-       {/* <button type='submit'> Register</button><br/> */}
+       <button type='submit'> Login</button><br/>
        
     </form>
-    {/* <p>already have an account</p> */}
-       <Link to="/home">login</Link>
+    <p>already have an account</p>
+       <Link to="/register">Signup</Link>
     </>
   )
 }
